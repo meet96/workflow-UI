@@ -8,6 +8,7 @@ import {
   Button,
   CircularProgress,
   Box,
+  Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -17,6 +18,16 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
       width: "25ch",
     },
+  },
+  directory: {
+    backgroundColor: theme.palette.primary.main,
+    color: "#fff",
+    borderRadius: "5px",
+    padding: theme.spacing(1),
+    marginBottom: theme.spacing(2),
+  },
+  listItem: {
+    marginLeft: theme.spacing(2),
   },
 }));
 
@@ -95,11 +106,15 @@ function GitHubAction() {
         />
       </form>
       <List>
+        <ListItem className={classes.directory}>
+          <Typography variant="h6">Directory Name</Typography>
+        </ListItem>
         {workflows.map((workflow) => (
           <ListItem
             button
             key={workflow.id}
             onClick={() => triggerWorkflow(workflow)}
+            className={classes.listItem}
           >
             <ListItemText primary={workflow.name} />
           </ListItem>
