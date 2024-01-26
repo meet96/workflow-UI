@@ -2,12 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import GitHubActionTrigger from "./App";
+import GitHubAction from "./Component/GithubAction";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <GitHubActionTrigger />
+    <GitHubAction />
   </React.StrictMode>
 );
 
