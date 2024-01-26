@@ -17,7 +17,7 @@ const GitHubActionTrigger = () => {
         },
         {
           headers: {
-            Authorization: `token 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`,
+            Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
             Accept: "application/vnd.github.v3+json",
           },
         }
